@@ -19,6 +19,8 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from collections import Counter
 from PIL import Image
+if "recent_reviews" not in st.session_state:
+    st.session_state["recent_reviews"] = []
 # ================================
 # Load dữ liệu và model
 # ================================
