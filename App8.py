@@ -479,6 +479,9 @@ elif st.session_state.active_tab == "Sentiment":
             st.success(f"✅ Sentiment predict ({model_choice}): **{labels[prediction]}**")
 
     with col_save:
+        # ✅ Khởi tạo session state nếu chưa có
+        if "recent_reviews" not in st.session_state:
+            st.session_state["recent_reviews"] = []
         if st.button("💾 Save Review", help="Save your review"):
             if not selected_company_name:
                 st.error("❌ Please select a company before saving!")
